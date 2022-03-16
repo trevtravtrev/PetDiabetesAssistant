@@ -27,20 +27,11 @@ class Sms:
 
     def initialize_server(self):
         context = ssl.create_default_context()
-
-        try:
-            self.server = smtplib.SMTP(self.EMAIL_DOMAIN, self.EMAIL_PORT)
-            self.server.ehlo()
-            self.server.starttls(context=context)
-            self.server.ehlo()
-            self.server.login(self.username, self.password)
-
-        except Exception as e:
-            print(f'initialize_server error: {e}')
+        self.server = smtplib.SMTP(self.EMAIL_DOMAIN, self.EMAIL_PORT)
+        self.server.ehlo()
+        self.server.starttls(context=context)
+        self.server.ehlo()
+        self.server.login(self.username, self.password)
 
     def send(self, message):
-        try:
-            self.server.sendmail(self.username, self.receiver_email, message)
-
-        except Exception as e:
-            print(f'send error: {e}')
+        self.server.sendmail(self.username, self.receiver_email, message)

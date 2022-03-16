@@ -12,6 +12,7 @@ pet_name = 'mypet'
 Alarm Settings
 /////////////////////////////
 """
+# ** cannot have same times for food and medicine
 # food alarm times (24 hour format, military time)
 food_alarm_times = ['8:57', '20:57']
 # medicine alarm times (24 hour format, military time)
@@ -27,8 +28,6 @@ Alarm Safety Settings
 critical_alarm_sound_timer = 5*60
 # time in seconds, if alarm has not been deactivated, sends out critical notifications to text/email
 critical_alarm_notification_timer = 7*60
-# time in seconds to snooze audio alarm if button pressed, does not affect critical_alarm_notification_timer
-snooze_time = 1*60
 
 
 """
@@ -49,7 +48,7 @@ food_audio_prompt = f'Time for {pet_name} to eat!'
 
 """
 /////////////////////////////
-Notification Text/Email Send Settings
+Notification Text/Email Sender Settings
 /////////////////////////////
 """
 # email accounts are used to send both text and email notifications to numbers/emails specified in receive settings
@@ -70,7 +69,7 @@ backup_email_port = 587
 
 """
 /////////////////////////////
-Notification Text/Email Receive Settings
+Notification Text/Email Receiver Settings
 /////////////////////////////
 """
 # dictionary (yournumber:yourcarrier), phone numbers and supported phone carrier option to receive text notifications
