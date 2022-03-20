@@ -3,6 +3,10 @@ from os.path import dirname, abspath, join
 import os
 
 
+class TextToSpeech:
+    pass
+
+
 def play_sound(sound_file, volume):
     os.putenv('SDL_AUDIODRIVER', 'alsa')
     os.putenv('SDL_AUDIODEV', '/dev/audio')
